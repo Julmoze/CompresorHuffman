@@ -10,6 +10,8 @@ info:      huf I entrada
 
 #include <stdio.h>
 #include <malloc.h>
+#include <iostream>
+#include <string.h>
 class Huffman{
   private:
     struct nodo
@@ -365,6 +367,41 @@ class Huffman{
         return(0);
     }
 
+    /*
+    Funcion para iniciar la compresion a partir de SOLO la direccion del archivo a comprimir
+    */
+    void start( std::string addressInput )
+    {
+        std::string addressOutput = addressInput;
+        addressOutput =  addressInput;
+
+        int ext = addressInput.length() - 3;
+        addressOutput[ext] = 'h';
+        addressOutput[ext+1] = 'u';
+        addressOutput[ext+2] = 'f';
+
+
+        char convAddress = 'C';
+
+        char addressInputTemp [1024];
+        strcpy( addressInputTemp, addressInput.c_str() );
+        char addressOutputTemp [1024];
+        strcpy( addressOutputTemp, addressOutput.c_str() );
+        char convAddressTemp [1024];
+        convAddressTemp[0]=convAddress;
+        char* argv[4];
+        argv[1] = convAddressTemp;
+        argv[2] = addressInputTemp;
+        argv[3] = addressOutputTemp;
+
+        //std::cout << argv[1] << "\n" << argv[2] << "\n" << argv[3] << "\n";
+
+        convert(4,argv);
+    }    
+
+    /*
+    Funcion que manda a comprimir dependiendo de sus parametros
+    */
     int convert(int argc, char *argv[])
     {
         int j;
@@ -414,6 +451,6 @@ class Huffman{
 int main(int argc, char *argv[])
 {
     Huffman prueba;
-    prueba.convert(argc,argv);
+    prueba.start( std::string( argv[1] ) );
     return 0;
 }
