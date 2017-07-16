@@ -1,0 +1,157 @@
+\hypertarget{classDropArea}{}\section{Drop\+Area Class Reference}
+\label{classDropArea}\index{Drop\+Area@{Drop\+Area}}
+
+
+Class for the drop recieving window.  
+
+
+
+
+Inheritance diagram for Drop\+Area\+:
+% FIG 0
+
+
+Collaboration diagram for Drop\+Area\+:
+% FIG 1
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDropArea_acb27e0d9f27ebfe11b48c1e2a02d3556}{clear} ()\hypertarget{classDropArea_acb27e0d9f27ebfe11b48c1e2a02d3556}{}\label{classDropArea_acb27e0d9f27ebfe11b48c1e2a02d3556}
+
+\begin{DoxyCompactList}\small\item\em Slot that recieves a signal to return to the area to a default state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDropArea_aaf4c8465ee6d323f0e0e751023a1ff53}{changed} (const Q\+Mime\+Data $\ast$mime\+Data=0)
+\begin{DoxyCompactList}\small\item\em Signals if a change has occured in the drop\+Area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDropArea_a20f63b46ffb1b97f64708d9b4894be11}{Drop\+Area} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor of the Drop Area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDropArea_ab0d599adc687e38354f1b69f1c857b2f}{drag\+Enter\+Event} (Q\+Drag\+Enter\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Sets the drop area when file is hovering above the drop area. Gives a preview. \end{DoxyCompactList}\item 
+void \hyperlink{classDropArea_aa99a94e96d520d84867f34cbccc95135}{drag\+Leave\+Event} (Q\+Drag\+Leave\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Resets the drop area to the default state after hovering. \end{DoxyCompactList}\item 
+void \hyperlink{classDropArea_afa4ff88a0a04f90ad18e01ff929e238e}{drop\+Event} (Q\+Drop\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Method that gets the file and applies a given function. \end{DoxyCompactList}\item 
+bool \hyperlink{classDropArea_a6732f0be00370b22716f29b8e5195e64}{is\+Valid} (std\+::string address\+Input)
+\begin{DoxyCompactList}\small\item\em Confirms if a given adress is valid for file management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the drop recieving window. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Drop\+Area@{Drop\+Area}!Drop\+Area@{Drop\+Area}}
+\index{Drop\+Area@{Drop\+Area}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{Drop\+Area(\+Q\+Widget $\ast$parent=0)}{DropArea(QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Area\+::\+Drop\+Area (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classDropArea_a20f63b46ffb1b97f64708d9b4894be11}{}\label{classDropArea_a20f63b46ffb1b97f64708d9b4894be11}
+
+
+Constructor of the Drop Area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Qwidget} & $\ast$parent Parent of the \hyperlink{classDropArea}{Drop\+Area} made \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Drop\+Area@{Drop\+Area}!changed@{changed}}
+\index{changed@{changed}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{changed}{changed}}]{\setlength{\rightskip}{0pt plus 5cm}void Drop\+Area\+::changed (
+\begin{DoxyParamCaption}
+\item[{const Q\+Mime\+Data $\ast$}]{mime\+Data = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classDropArea_aaf4c8465ee6d323f0e0e751023a1ff53}{}\label{classDropArea_aaf4c8465ee6d323f0e0e751023a1ff53}
+
+
+Signals if a change has occured in the drop\+Area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Mime\+Data $\ast$mime\+Data Recieves a data to Mimic, Deafult is 0(Nothing) \\
+\hline
+\end{DoxyParams}
+\index{Drop\+Area@{Drop\+Area}!drag\+Enter\+Event@{drag\+Enter\+Event}}
+\index{drag\+Enter\+Event@{drag\+Enter\+Event}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{drag\+Enter\+Event(\+Q\+Drag\+Enter\+Event $\ast$event) override}{dragEnterEvent(QDragEnterEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Drop\+Area\+::drag\+Enter\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drag\+Enter\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classDropArea_ab0d599adc687e38354f1b69f1c857b2f}{}\label{classDropArea_ab0d599adc687e38354f1b69f1c857b2f}
+
+
+Sets the drop area when file is hovering above the drop area. Gives a preview. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Drag\+Enter\+Event} & $\ast$event pointer to the event \\
+\hline
+\end{DoxyParams}
+\index{Drop\+Area@{Drop\+Area}!drag\+Leave\+Event@{drag\+Leave\+Event}}
+\index{drag\+Leave\+Event@{drag\+Leave\+Event}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{drag\+Leave\+Event(\+Q\+Drag\+Leave\+Event $\ast$event) override}{dragLeaveEvent(QDragLeaveEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Area\+::drag\+Leave\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drag\+Leave\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classDropArea_aa99a94e96d520d84867f34cbccc95135}{}\label{classDropArea_aa99a94e96d520d84867f34cbccc95135}
+
+
+Resets the drop area to the default state after hovering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Drag\+Enter\+Event} & $\ast$event pointer to the event \\
+\hline
+\end{DoxyParams}
+\index{Drop\+Area@{Drop\+Area}!drop\+Event@{drop\+Event}}
+\index{drop\+Event@{drop\+Event}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{drop\+Event(\+Q\+Drop\+Event $\ast$event) override}{dropEvent(QDropEvent *event) override}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Area\+::drop\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drop\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}\hypertarget{classDropArea_afa4ff88a0a04f90ad18e01ff929e238e}{}\label{classDropArea_afa4ff88a0a04f90ad18e01ff929e238e}
+
+
+Method that gets the file and applies a given function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Drag\+Enter\+Event} & $\ast$event pointer to the event \\
+\hline
+\end{DoxyParams}
+File adress is attached to the text.
+
+Then it is converted to a c String so the Huffman.\+cpp can process it correctly, when given to it.
+
+Before accepting a compression, the Adress is checked to be valid.\index{Drop\+Area@{Drop\+Area}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Drop\+Area@{Drop\+Area}}
+\subsubsection[{\texorpdfstring{is\+Valid(std\+::string address\+Input)}{isValid(std::string addressInput)}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Area\+::is\+Valid (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{address\+Input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classDropArea_a6732f0be00370b22716f29b8e5195e64}{}\label{classDropArea_a6732f0be00370b22716f29b8e5195e64}
+
+
+Confirms if a given adress is valid for file management. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & address Input Address to validate \\
+\hline
+\end{DoxyParams}
+Only .txt and .huf are accepted. Last three letters of the address are checked to determine this.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+droparea.\+h\item 
+droparea.\+cpp\end{DoxyCompactItemize}

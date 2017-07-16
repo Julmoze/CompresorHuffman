@@ -1,0 +1,85 @@
+\hypertarget{classDropSiteWindow}{}\section{Drop\+Site\+Window Class Reference}
+\label{classDropSiteWindow}\index{Drop\+Site\+Window@{Drop\+Site\+Window}}
+
+
+Class for the main window of the program.  
+
+
+
+
+Inheritance diagram for Drop\+Site\+Window\+:
+% FIG 0
+
+
+Collaboration diagram for Drop\+Site\+Window\+:
+% FIG 1
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDropSiteWindow_a76f392c9ae2dabdbe1e47a0a473bed8b}{update\+Formats\+Table} (const Q\+Mime\+Data $\ast$mime\+Data)
+\begin{DoxyCompactList}\small\item\em Gets signals to update the table with information displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDropSiteWindow_a46689da5d5284b0c22ad4911e6b9ad54}{Drop\+Site\+Window} ()
+\begin{DoxyCompactList}\small\item\em Control window of the program. Handles connection between compressor and drop Area. \end{DoxyCompactList}\item 
+bool \hyperlink{classDropSiteWindow_a5d1aa8eb4e8381842a96baa14ef2f3ad}{address\+Input\+Is\+Valid} (std\+::string address\+Input)
+\begin{DoxyCompactList}\small\item\em Verifies the extension is correct and set the compression or decompression flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the main window of the program. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Drop\+Site\+Window@{Drop\+Site\+Window}!Drop\+Site\+Window@{Drop\+Site\+Window}}
+\index{Drop\+Site\+Window@{Drop\+Site\+Window}!Drop\+Site\+Window@{Drop\+Site\+Window}}
+\subsubsection[{\texorpdfstring{Drop\+Site\+Window()}{DropSiteWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Site\+Window\+::\+Drop\+Site\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDropSiteWindow_a46689da5d5284b0c22ad4911e6b9ad54}{}\label{classDropSiteWindow_a46689da5d5284b0c22ad4911e6b9ad54}
+
+
+Control window of the program. Handles connection between compressor and drop Area. 
+
+Labels, drop area, display table, and buttons are created for the main layout in that order.
+
+\subsection{Member Function Documentation}
+\index{Drop\+Site\+Window@{Drop\+Site\+Window}!address\+Input\+Is\+Valid@{address\+Input\+Is\+Valid}}
+\index{address\+Input\+Is\+Valid@{address\+Input\+Is\+Valid}!Drop\+Site\+Window@{Drop\+Site\+Window}}
+\subsubsection[{\texorpdfstring{address\+Input\+Is\+Valid(std\+::string address\+Input)}{addressInputIsValid(std::string addressInput)}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Site\+Window\+::address\+Input\+Is\+Valid (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{address\+Input}
+\end{DoxyParamCaption}
+)}\hypertarget{classDropSiteWindow_a5d1aa8eb4e8381842a96baa14ef2f3ad}{}\label{classDropSiteWindow_a5d1aa8eb4e8381842a96baa14ef2f3ad}
+
+
+Verifies the extension is correct and set the compression or decompression flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & address\+Input String to verify write directory \\
+\hline
+\end{DoxyParams}
+\index{Drop\+Site\+Window@{Drop\+Site\+Window}!update\+Formats\+Table@{update\+Formats\+Table}}
+\index{update\+Formats\+Table@{update\+Formats\+Table}!Drop\+Site\+Window@{Drop\+Site\+Window}}
+\subsubsection[{\texorpdfstring{update\+Formats\+Table}{updateFormatsTable}}]{\setlength{\rightskip}{0pt plus 5cm}Drop\+Site\+Window\+::update\+Formats\+Table (
+\begin{DoxyParamCaption}
+\item[{const Q\+Mime\+Data $\ast$}]{mime\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classDropSiteWindow_a76f392c9ae2dabdbe1e47a0a473bed8b}{}\label{classDropSiteWindow_a76f392c9ae2dabdbe1e47a0a473bed8b}
+
+
+Gets signals to update the table with information displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Mime\+Data $\ast$mime\+Data Data to extract information on. \\
+\hline
+\end{DoxyParams}
+Format table is updated depending on signals from the drop area. It displays information when needed.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dropsitewindow.\+h\item 
+dropsitewindow.\+cpp\end{DoxyCompactItemize}

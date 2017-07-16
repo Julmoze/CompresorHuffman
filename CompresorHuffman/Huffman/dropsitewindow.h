@@ -53,30 +53,39 @@
 
 #include <QWidget>
 
-class QDialogButtonBox;
-class QLabel;
-class QMimeData;
-class QPushButton;
-class QTableWidget;
+#include <QDialogButtonBox>
+#include <QLabel>
+#include <QMimeData>
+#include <QPushButton>
+#include <QTableWidget>
+#include "droparea.h"
 
-class DropArea;
 
+/*! \class DropSiteWindow : public QWidget
+    \brief Class for the main window of the program.
+*/
 class DropSiteWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    /*
-    Construye la ventana del sistema con los botones y las distintas areas
-    Builds a new program window with the respective butons and areas.
+
+    /*! \fn   DropSiteWindow();;
+        \brief Control window of the program. Handles connection between compressor and drop Area.
     */
     DropSiteWindow();
 
+    /*! \fn addressInputIsValid( std::string addressInput )
+        \brief Verifies the extension is correct and set the compression or decompression flag
+        \param std::string addressInput String to verify write directory
+    */
+    bool addressInputIsValid( std::string addressInput );
+
 public slots:
-    /*
-    Actualiza la informacion desplegada al arrastrar el archivo y la accion que se va a tomar
-    Updates the information displayed below the drag area with the
-    details on the most recent applied compression/decompression
+
+    /*! \fn updateFormatsTable(const QMimeData *mimeData);
+        \brief Gets signals to update the table with information displayed.
+        \param const QMimeData *mimeData Data to extract information on.
     */
     void updateFormatsTable(const QMimeData *mimeData);
 
@@ -88,12 +97,7 @@ private:
     QPushButton *clearButton;
     QPushButton *quitButton;
     QDialogButtonBox *buttonBox;
-    /*
-    Verifica si la direccion del archivo ingresado es valida
-    Verifies the extension is correct and set the compression
-    or decompression flag
-    */
-    bool addressInputIsValid( std::string addressInput );
+
 };
 
 #endif // DROPSITEWINDOW_H

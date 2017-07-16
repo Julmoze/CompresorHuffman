@@ -53,58 +53,69 @@
 
 #include <QLabel>
 
-class QMimeData;
+#include <QMimeData>
 
+/*! \class DropArea : public QLabel
+    \brief Class for the drop recieving window
+*/
 class DropArea : public QLabel
 {
     Q_OBJECT
 
 public:
-    /*
-    Construye el dropArea de la aplicacion
-    Builds the drop Area for the files to be converted
+
+    /*! \fn DropArea(QWidget *parent = 0);
+        \brief Constructor of the Drop Area
+        \param Qwidget *parent Parent of the DropArea made
     */
     DropArea(QWidget *parent = 0);
 
 public slots:
-    /*
-    Deja el DropArea en un estado definido
-    Clears dropArea to the default state
+
+
+    /*! \fn void clear();
+        \brief Slot that recieves a signal to return to the area to a default state
     */
     void clear();
 
 signals:
-    /*
-    Indica cambios en el DropArea, cuando exite un archivo sobre la aplicacion
+
+    /*! \fn void changed(const QMimeData *mimeData = 0);
+        \brief Signals if a change has occured in the dropArea
+        \param const QMimeData *mimeData Recieves a data to Mimic, Deafult is 0(Nothing)
     */
     void changed(const QMimeData *mimeData = 0);
 
 protected:
-    /*
-    Evento que permite ingresar archivo al sistema
-    Sets the drop area when file is hovering above the drop area. Gives a
+
+    /*! \fn void dragEnterEvent(QDragEnterEvent *event) override;
+        \brief Sets the drop area when file is hovering above the drop area. Gives a
     preview.
+        \param QDragEnterEvent *event pointer to the event
     */
     void dragEnterEvent(QDragEnterEvent *event) override;
-    /*
-    Metodo que prepara el DropArea
-    Method that resets the drop area to the default state after hovering
-    a new file over the text area
+
+    /*! \fn dragLeaveEvent(QDragLeaveEvent *event) override;
+        \brief Resets the drop area to the default state after hovering
+        \param QDragEnterEvent *event pointer to the event
     */
    void dragLeaveEvent(QDragLeaveEvent *event) override;
-    /*
-    Captura el archivo y envia a comprimir
-    Method that gets the file and applies Huffman compression
-    */
+
+   /*! \fn dropEvent(QDropEvent *event) override;
+       \brief Method that gets the file and applies a given function
+       \param QDragEnterEvent *event pointer to the event
+   */
     void dropEvent(QDropEvent *event) override;
-    /*
-    Comprueba si el archivo es valido
-    Method that filters whether a file is of a valid extension or not
+
+    /*! \fn isValid( std::string addressInput );
+        \brief Confirms if a given adress is valid for file management
+        \param std::string address Input Address to validate
     */
     bool isValid( std::string addressInput );
 
 private:
     QLabel *label;
+
 };
 
 #endif // DROPAREA_H

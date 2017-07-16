@@ -52,12 +52,14 @@
 #include <string>
 #include <QtWidgets>
 
-#include "droparea.h"
 #include "dropsitewindow.h"
 #include "huffman.h"
 
 DropSiteWindow::DropSiteWindow()
 {
+    /*!
+    \brief Labels, drop area, display table, and buttons are created for the main layout in that order.
+    */
     abstractLabel = new QLabel(tr("Drag a .txt or .huf file to the square area below. The program will detect the extensions "
                                   "and compress or decompress depending on it."));
     abstractLabel->setWordWrap(true);
@@ -115,6 +117,9 @@ bool DropSiteWindow::addressInputIsValid( std::string addressInput )
 
 void DropSiteWindow::updateFormatsTable(const QMimeData *mimeData)
 {
+    /*!
+    \brief Format table is updated depending on signals from the drop area. It displays information when needed.
+    */
     formatsTable->setRowCount(0);
     if (!mimeData)
         return;

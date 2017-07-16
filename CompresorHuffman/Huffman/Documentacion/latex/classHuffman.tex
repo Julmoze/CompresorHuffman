@@ -1,0 +1,209 @@
+\hypertarget{classHuffman}{}\section{Huffman Class Reference}
+\label{classHuffman}\index{Huffman@{Huffman}}
+
+
+Class in charge of compressing and decompressing files.  
+
+
+
+
+{\ttfamily \#include $<$huffman.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classHuffman_ac198c8fd7d49a8453f987254e1180e6f}{preparar\+\_\+hojas} (char $\ast$archivo)
+\begin{DoxyCompactList}\small\item\em Leaves are prepared. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_af48ac0adffaf596525944160dab58f85}{preparar\+\_\+telar} ()\hypertarget{classHuffman_af48ac0adffaf596525944160dab58f85}{}\label{classHuffman_af48ac0adffaf596525944160dab58f85}
+
+\begin{DoxyCompactList}\small\item\em Prepares the weaver for the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_a6dd163a23c0bae9ad837fdac6ff02092}{tejer} ()\hypertarget{classHuffman_a6dd163a23c0bae9ad837fdac6ff02092}{}\label{classHuffman_a6dd163a23c0bae9ad837fdac6ff02092}
+
+\begin{DoxyCompactList}\small\item\em Weaves the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_af2e5dd5aee778931e06811f45ea61e6b}{codificar} ()\hypertarget{classHuffman_af2e5dd5aee778931e06811f45ea61e6b}{}\label{classHuffman_af2e5dd5aee778931e06811f45ea61e6b}
+
+\begin{DoxyCompactList}\small\item\em With the tree made, an iterator makes the code. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_ab4c7fdb90d46c20bc9bb229e90bfbd5d}{debug} ()\hypertarget{classHuffman_ab4c7fdb90d46c20bc9bb229e90bfbd5d}{}\label{classHuffman_ab4c7fdb90d46c20bc9bb229e90bfbd5d}
+
+\begin{DoxyCompactList}\small\item\em Prints data related to the characters. \end{DoxyCompactList}\item 
+int \hyperlink{classHuffman_ad904474d3bfa10306991edb16dd5a763}{escribe\+\_\+cabecera} (char $\ast$destino)
+\begin{DoxyCompactList}\small\item\em Prints the information of the original file and the ammount of different characters. \end{DoxyCompactList}\item 
+int \hyperlink{classHuffman_a1416565c30023347739a197baf8f8a67}{comprimir} (char $\ast$origen, char $\ast$destino)
+\begin{DoxyCompactList}\small\item\em Compresses the file. \end{DoxyCompactList}\item 
+int \hyperlink{classHuffman_a172d8e682b217a2b0f02e6df303bd5fa}{descomprimir} (char $\ast$origen, char $\ast$destino)
+\begin{DoxyCompactList}\small\item\em Decompresses the file. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classHuffman_a350ba5e1310462b12037f1d1d8b6fc74}{address\+Input\+To\+Output} (std\+::string address\+Input)
+\begin{DoxyCompactList}\small\item\em Turns the input address into the output adress file needed. \end{DoxyCompactList}\item 
+char \hyperlink{classHuffman_a6927f13ed42f1bcded716277cfbc966d}{compression\+Flow} (std\+::string address\+Input)
+\begin{DoxyCompactList}\small\item\em Indicates whether to compress or decompress, depending on the input address. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_a8ff9db082a4eb00c6e3a77b8dc65ad73}{start} (std\+::string address\+Input)
+\begin{DoxyCompactList}\small\item\em Starts the compression or decompression process by creating every needed part. \end{DoxyCompactList}\item 
+void \hyperlink{classHuffman_abac14be26f9859fdf4a894815c42b138}{convert} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Converts a given file in a path to the opposite extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class in charge of compressing and decompressing files. 
+
+\subsection{Member Function Documentation}
+\index{Huffman@{Huffman}!address\+Input\+To\+Output@{address\+Input\+To\+Output}}
+\index{address\+Input\+To\+Output@{address\+Input\+To\+Output}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{address\+Input\+To\+Output(std\+::string address\+Input)}{addressInputToOutput(std::string addressInput)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Huffman\+::address\+Input\+To\+Output (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{address\+Input}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_a350ba5e1310462b12037f1d1d8b6fc74}{}\label{classHuffman_a350ba5e1310462b12037f1d1d8b6fc74}
+
+
+Turns the input address into the output adress file needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address\+Input} & Input file address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns output file address 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!compression\+Flow@{compression\+Flow}}
+\index{compression\+Flow@{compression\+Flow}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{compression\+Flow(std\+::string address\+Input)}{compressionFlow(std::string addressInput)}}]{\setlength{\rightskip}{0pt plus 5cm}char Huffman\+::compression\+Flow (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{address\+Input}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_a6927f13ed42f1bcded716277cfbc966d}{}\label{classHuffman_a6927f13ed42f1bcded716277cfbc966d}
+
+
+Indicates whether to compress or decompress, depending on the input address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address\+Input} & Input file address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \textquotesingle{}D\textquotesingle{} if Decompresses, \textquotesingle{}C\textquotesingle{} if Compresses. 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!comprimir@{comprimir}}
+\index{comprimir@{comprimir}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{comprimir(char $\ast$origen, char $\ast$destino)}{comprimir(char *origen, char *destino)}}]{\setlength{\rightskip}{0pt plus 5cm}int Huffman\+::comprimir (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{origen, }
+\item[{char $\ast$}]{destino}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_a1416565c30023347739a197baf8f8a67}{}\label{classHuffman_a1416565c30023347739a197baf8f8a67}
+
+
+Compresses the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origen} & Input file address \\
+\hline
+{\em destino} & Output file address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if addresses are valid, 1 if the input address is invalid, 2 if the output address is invalid 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!convert@{convert}}
+\index{convert@{convert}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{convert(int argc, char $\ast$argv[])}{convert(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Huffman\+::convert (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_abac14be26f9859fdf4a894815c42b138}{}\label{classHuffman_abac14be26f9859fdf4a894815c42b138}
+
+
+Converts a given file in a path to the opposite extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Size argv\mbox{[}\mbox{]}. \\
+\hline
+{\em argv} & The \mbox{[}1\mbox{]} is \textquotesingle{}C\textquotesingle{} or \textquotesingle{}D\textquotesingle{}, the \mbox{[}2\mbox{]} is address input, the \mbox{[}3\mbox{]} is address output. \\
+\hline
+\end{DoxyParams}
+\index{Huffman@{Huffman}!descomprimir@{descomprimir}}
+\index{descomprimir@{descomprimir}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{descomprimir(char $\ast$origen, char $\ast$destino)}{descomprimir(char *origen, char *destino)}}]{\setlength{\rightskip}{0pt plus 5cm}int Huffman\+::descomprimir (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{origen, }
+\item[{char $\ast$}]{destino}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_a172d8e682b217a2b0f02e6df303bd5fa}{}\label{classHuffman_a172d8e682b217a2b0f02e6df303bd5fa}
+
+
+Decompresses the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origen} & Input file address \\
+\hline
+{\em destino} & Output file address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if addresses are valid, 1 if the input address is invalid, 2 if the output address is invalid 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!escribe\+\_\+cabecera@{escribe\+\_\+cabecera}}
+\index{escribe\+\_\+cabecera@{escribe\+\_\+cabecera}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{escribe\+\_\+cabecera(char $\ast$destino)}{escribe_cabecera(char *destino)}}]{\setlength{\rightskip}{0pt plus 5cm}int Huffman\+::escribe\+\_\+cabecera (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{destino}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_ad904474d3bfa10306991edb16dd5a763}{}\label{classHuffman_ad904474d3bfa10306991edb16dd5a763}
+
+
+Prints the information of the original file and the ammount of different characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destino} & Output file address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if the address is valid, 1 if invalid 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!preparar\+\_\+hojas@{preparar\+\_\+hojas}}
+\index{preparar\+\_\+hojas@{preparar\+\_\+hojas}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{preparar\+\_\+hojas(char $\ast$archivo)}{preparar_hojas(char *archivo)}}]{\setlength{\rightskip}{0pt plus 5cm}int Huffman\+::preparar\+\_\+hojas (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{archivo}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_ac198c8fd7d49a8453f987254e1180e6f}{}\label{classHuffman_ac198c8fd7d49a8453f987254e1180e6f}
+
+
+Leaves are prepared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em archivo} & File address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if the address is valid, 1 if invalid 
+\end{DoxyReturn}
+\index{Huffman@{Huffman}!start@{start}}
+\index{start@{start}!Huffman@{Huffman}}
+\subsubsection[{\texorpdfstring{start(std\+::string address\+Input)}{start(std::string addressInput)}}]{\setlength{\rightskip}{0pt plus 5cm}void Huffman\+::start (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{address\+Input}
+\end{DoxyParamCaption}
+)}\hypertarget{classHuffman_a8ff9db082a4eb00c6e3a77b8dc65ad73}{}\label{classHuffman_a8ff9db082a4eb00c6e3a77b8dc65ad73}
+
+
+Starts the compression or decompression process by creating every needed part. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address\+Input} & Input file address \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+huffman.\+h\item 
+huffman.\+cpp\end{DoxyCompactItemize}
