@@ -15,17 +15,23 @@ info:      huf I entrada
 #include <string>
 #include <cstring>
 
+/*! \class Huffman
+    \brief Class in charge of compressing and decompressing files.
+*/
 class Huffman
 {
   private:
+    /*! \struct nodo
+        \brief Structure representing each tree node.
+    */
     struct nodo
     {
-        struct nodo *der,*izq,*arr;  /* forma el nodo *//* Creates node*/
-        int cuenta;                  /* apariciones del carÃ¡cter *//* Counts character repetition*/
-        char bit;                    /* 0 o 1 */ /*assigns 1 or 0*/
-        unsigned char karacter;      /* el carÃ¡cter (para la descompresiÃ³n */ /*Original character*/
-        char *codigo;                /* cadena de ceros y unos con la codificaciÃ³n *//* code for compressed code*/
-        char nbits;                  /* me apunto el numero de bits que codifican el carÃ¡cter *//*Number of bits that make the code up*/
+        struct nodo *der,*izq,*arr;  /*!< Creates node*/
+        int cuenta;                  /*!< Counts character repetition*/
+        char bit;                    /*!< Assigns 1 or 0*/
+        unsigned char karacter;      /*!< Original character*/
+        char *codigo;                /*!< Code for compressed code*/
+        char nbits;                  /*!< Number of bits that make the code up*/
     }HOJAS[256],*TELAR[256],*MENOR,*SEGUNDO;
 
     int NSIMB=0,nsimb;
@@ -33,81 +39,82 @@ class Huffman
     int NBYTES=0;
 
   public:
-    /*--------------------------------
-    preparar las hojas
-    Leaves are prepared
-    --------------------------------*/
-    int preparar_hojas(char *archivo);
-    /*--------------------------------
-    preparar telar
-    Prepares the weaver for the tree
-    --------------------------------*/
-    void preparar_telar();
-    /*--------------------------------
-    tejer el Arbol
-    Weaves the tree
-    --------------------------------*/
-    void tejer();
-    /*--------------------------------
-    Una vez construido el Ã¡rbol, puedo codificar
-    cada carÃ¡cter. Para eso recorro desde la hoja
-    a la raÃ­z, apunto 0 o 1 en una pila y luego
-    paso la pila a una cadena. Un 2 determina el
-    fin de la cadena.
-    With the tree made, an iterator makes the code.
-    --------------------------------*/
-    void codificar();
-    /*--------------------------------
-    debug. Imprime la info sobre cada
-    carÃ¡cter, como nÃºmero de apariciones
-    y cadena con que se codifica
-    Prints data related to the characters.
-    --------------------------------*/
-    void debug();
-    /*--------------------------------
-    Escribe la cabecera del archivo de
-    destino. La cabecera contiene: el
-    nÃºmero de bytes del archivo origen,
-    el nÃºmero de caracteres distintos
-    en ese archivo y una lista de parejas
-    nÃºmero de carÃ¡cter-cuenta de ese
-    carÃ¡cter. Eso es suficiente para la
-    descompresiÃ³n
-    Prints the information of the original file
-    and the ammount of different characters.
-    --------------------------------*/
-    int escribe_cabecera(char *destino);
-    /*--------------------------------
-    Una vez construido el Ã¡rbol y codificado
-    cada carÃ¡cter se puede proceder a la
-    compresiÃ³n: se tomarÃ¡ carÃ¡cter a carÃ¡cter
-    del archivo origen y se usarÃ¡ la cadena
-    de codificaciÃ³n para ir escribiendo
-    bits en un buffer de un carÃ¡cter, que
-    cada vez que quede lleno se pasarÃ¡ al
-    archivo de destino
-    Each character, is turned into the respective bit code to the
-    destiny file.
-    --------------------------------*/
-    int comprimir(char *origen, char *destino);
-    /*--------------------------------
-    Descomprime el archivo. El primer paso
-    es leer la cabecera, paso previo a la
-    descompresiÃ³n. Recuerdo formato de
-    la cabecera:
-    NBYTES|NSIMB|(char,cuenta)*
-    Decompresses the file.
-    --------------------------------*/
-    int descomprimir(char *origen, char *destino);
-    /*Turns the input address into the output adress file needed*/
 
+    /*! \fn int preparar_hojas(char *archivo)
+        \brief Leaves are prepared.
+        \param archivo File address
+        \return Returns 0 if the address is valid, 1 if invalid
+	*/
+    int preparar_hojas(char *archivo);
+
+    /*! \fn void preparar_telar()
+        \brief Prepares the weaver for the tree.
+	*/
+    void preparar_telar();
+    
+    /*! \fn void tejer()
+        \brief Weaves the tree
+	*/
+    void tejer();
+    
+    /*! \fn void codificar()
+        \brief With the tree made, an iterator makes the code.
+	*/
+    void codificar();
+    
+    /*! \fn void debug()
+        \brief Prints data related to the characters.
+	*/
+    void debug();
+
+    /*! \fn int escribe_cabecera(char *destino)
+        \brief Prints the information of the original file and the ammount of different characters.
+        \param destino Output file address
+        \return Returns 0 if the address is valid, 1 if invalid
+	*/
+    int escribe_cabecera(char *destino);
+    
+    /*! \fn int comprimir(char *origen, char *destino)
+        \brief Compresses the file.
+        \param origen Input file address
+        \param destino Output file address
+        \return Returns 0 if addresses are valid, 1 if the input address is invalid, 2 if the output address is invalid
+	*/
+    int comprimir(char *origen, char *destino);
+    
+    /*! \fn int descomprimir(char *origen, char *destino)
+        \brief Decompresses the file.
+        \param origen Input file address
+        \param destino Output file address
+        \return Returns 0 if addresses are valid, 1 if the input address is invalid, 2 if the output address is invalid
+	*/
+    int descomprimir(char *origen, char *destino);
+    
+    /*! \fn std::string addressInputToOutput( std::string addressInput )
+        \brief Turns the input address into the output adress file needed
+        \param addressInput Input file address
+        \return Returns output file address
+	*/
     std::string addressInputToOutput( std::string addressInput );
-    /* Figures if the file is to be compressed or decompressed*/
+
+    /*! \fn char compressionFlow( std::string addressInput )
+        \brief Indicates whether to compress or decompress, depending on the input address
+        \param addressInput Input file address
+        \return Returns 'D' if Decompresses, 'C' if Compresses.
+	*/
     char compressionFlow( std::string addressInput );
-    /*Starts the compression or decompression process by creating
-    every needed part*/
+    
+    /*! \fn void start( std::string addressInput )
+        \brief Starts the compression or decompression process by creating every needed part.
+        \param addressInput Input file address
+	*/
     void start( std::string addressInput );
-    /*Converts a given file in a path to the opposite extension*/
+
+    /*! \fn void convert(int argc, char *argv[])
+        \brief Converts a given file in a path to the opposite extension.
+        \param argc Size argv[].
+        \param argv The [1] is 'C' or 'D', the [2] is address input, the [3] is address output.
+	*/
     void convert(int argc, char *argv[]);
 
 };
